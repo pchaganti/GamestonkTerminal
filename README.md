@@ -83,7 +83,7 @@ Gamestonk Terminal is an awesome stock and crypto market terminal that has been 
 
 Gamestonk Terminal provides a modern Python-based integrated environment for investment research, that allows the average joe retail trader to leverage state-of-the-art Data Science and Machine Learning technologies.
 
-As a modern Python-based environment, GamestonkTerminal opens access to numerous Python data libraries in Data Science (Pandas, Numpy, Scipy, Jupyter), Machine Learning (Pytorch, Tensorflow, Sklearn, Flair), and Data Acquisition (Beautiful Soup, and numerous third-party APIs). 
+As a modern Python-based environment, GamestonkTerminal opens access to numerous Python data libraries in Data Science (Pandas, Numpy, Scipy, Jupyter), Machine Learning (Pytorch, Tensorflow, Sklearn, Flair), and Data Acquisition (Beautiful Soup, and numerous third-party APIs).
 
 
 ## Getting Started
@@ -111,19 +111,24 @@ conda activate gst
 ```
 Note: At the end, you can deactivate it with: `conda deactivate`
 
-4. Fork the Project
+4. Install git
+```
+conda install -c anaconda git
+````
+
+5. Fork the Project
 
 - Via HTTPS: `git clone https://github.com/DidierRLopes/GamestonkTerminal.git`
 - via SSH:  `git clone git@github.com:DidierRLopes/GamestonkTerminal.git`
 
 Navigate into the folder with: `cd GamestonkTerminal/`
 
-5. Install poetry
+6. Install poetry
 ```
 conda install poetry
 ```
 
-5.5. If installing python 3.8
+6.5. If installing python 3.8
 ```
 conda deactivate
 conda activate gst
@@ -131,13 +136,13 @@ conda activate gst
 *The `conda deactivate` -> `conda activate` in the middle is on purpose, this is sometimes required to avoid issues with poetry*
 
 
-6. Install poetry dependencies
+7. Install poetry dependencies
 ```
 poetry install
 ```
 This is a library for package management, and ensures a smoother experience than: ``pip install -r requirements.txt``
 
-7.  You're ready to Gamestonk it!
+8.  You're ready to Gamestonk it!
 
 ```
 python terminal.py
@@ -213,7 +218,7 @@ If you run into trouble with poetry and the advice above did not help, your best
 ### ModuleNotFoundError
 
 In the case when you run into an error of the form `ModuleNotFoundError: No module named '_______'`.  The solution is to
-install the missing package via pip.  
+install the missing package via pip.
 
 If you get the error that `statsmodels` is not found, you would run
 * `pip install statsmodels`
@@ -350,6 +355,7 @@ Welcome to the club, and feel free to support the developers behind this amazing
 
 <a href="https://www.buymeacoffee.com/didierlopes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
+OR, if you prefer a coinbase crypto wallet: **3Pfx7NwGgmZsk7hQJxzHdp5rGBftUHVTiM**
 
 ## License
 
