@@ -4,6 +4,7 @@ import argparse
 
 import sys
 import os
+import subprocess
 from datetime import datetime, timedelta
 import pandas as pd
 import yfinance as yf
@@ -13,12 +14,20 @@ from prompt_toolkit.completion import NestedCompleter
 from gamestonk_terminal import config_terminal as cfg
 from gamestonk_terminal import feature_flags as gtff
 from gamestonk_terminal import thought_of_the_day as thought
-from gamestonk_terminal import res_menu as rm
 from gamestonk_terminal.discovery import disc_controller
 from gamestonk_terminal.due_diligence import dd_controller
 from gamestonk_terminal.fundamental_analysis import fa_controller
 from gamestonk_terminal.helper_funcs import b_is_stock_market_open, get_flair
-from gamestonk_terminal.main_helper import clear, export, load, print_help, view, candle
+from gamestonk_terminal.main_helper import (
+    clear,
+    export,
+    load,
+    print_help,
+    view,
+    candle,
+    print_goodbye,
+    update_terminal,
+)
 from gamestonk_terminal.menu import session
 from gamestonk_terminal.papermill import papermill_controller as mill
 from gamestonk_terminal.behavioural_analysis import ba_controller
@@ -33,6 +42,10 @@ from gamestonk_terminal.cryptocurrency import crypto_controller
 from gamestonk_terminal.screener import screener_controller
 from gamestonk_terminal.portfolio_optimization import po_controller
 from gamestonk_terminal.forex import fx_controller
+from gamestonk_terminal.backtesting import bt_controller
+from gamestonk_terminal.resource_collection import rc_controller
+from gamestonk_terminal.research import res_controller
+from gamestonk_terminal.government import gov_controller
 
 
 # pylint: disable=too-many-statements,too-many-branches
@@ -46,9 +59,11 @@ def main():
         os.system("")
 
     s_ticker = ""
-    s_start = ""
+    s_start = "2015-01-01"
     df_stock = pd.DataFrame()
     s_interval = "1440min"
+
+    update_succcess = False
 
     # Set stock by default to speed up testing
     # s_ticker = "BB"
@@ -64,6 +79,8 @@ def main():
         "help",
         "quit",
         "q",
+        "reset",
+        "update",
         "clear",
         "load",
         "candle",
@@ -76,6 +93,7 @@ def main():
         "res",
         "fa",
         "ta",
+        "bt",
         "dd",
         "eda",
         "pred",
@@ -87,6 +105,8 @@ def main():
         "ra",
         "po",
         "fx",
+        "rc",
+        "gov",
     ]
 
     menu_parser.add_argument("opt", choices=choices)
@@ -100,7 +120,7 @@ def main():
         print(e, "\n")
 
     # Print first welcome message and help
-    print("\nWelcome to Gamestonk Terminal 🚀\n")
+    print("\nWelcome to Gamestonk Terminal Ape.\n")
     should_print_help = True
     parsed_stdin = False
 
@@ -150,7 +170,11 @@ def main():
         if ns_known_args.opt == "help":
             should_print_help = True
 
-        elif (ns_known_args.opt == "quit") or (ns_known_args.opt == "q"):
+        elif (
+            (ns_known_args.opt == "quit")
+            or (ns_known_args.opt == "q")
+            or (ns_known_args.opt == "reset")
+        ):
             break
 
         elif ns_known_args.opt == "clear":
@@ -209,7 +233,7 @@ def main():
             )
 
         elif ns_known_args.opt == "res":
-            b_quit = rm.res_menu(
+            b_quit = res_controller.menu(
                 s_ticker.split(".")[0] if "." in s_ticker else s_ticker,
                 s_start,
                 s_interval,
@@ -358,6 +382,21 @@ def main():
         elif ns_known_args.opt == "scr":
             b_quit = screener_controller.menu()
 
+        elif ns_known_args.opt == "bt":
+            b_quit = bt_controller.menu(
+                s_ticker.split(".")[0] if "." in s_ticker else s_ticker, s_start
+            )
+
+        elif ns_known_args.opt == "rc":
+            b_quit = rc_controller.menu()
+
+        elif ns_known_args.opt == "gov":
+            b_quit = gov_controller.menu(s_ticker)
+
+        elif ns_known_args.opt == "update":
+            update_succcess = not update_terminal()
+            break
+
         else:
             print("Shouldn't see this command!")
             continue
@@ -368,9 +407,22 @@ def main():
         if not main_cmd:
             should_print_help = True
 
-    print(
-        "Hope you enjoyed the terminal. Remember that stonks only go up. Diamond hands.\n"
-    )
+    if not gtff.ENABLE_QUICK_EXIT:
+        if ns_known_args.opt == "reset" or update_succcess:
+            print("resetting...")
+
+            completed_process = subprocess.run(
+                "python terminal.py", shell=True, check=False
+            )
+            if completed_process.returncode != 0:
+                completed_process = subprocess.run(
+                    "python3 terminal.py", shell=True, check=False
+                )
+                if completed_process.returncode != 0:
+                    print("Unfortunately, resetting wasn't possible!\n")
+                    print_goodbye()
+        else:
+            print_goodbye()
 
 
 if __name__ == "__main__":

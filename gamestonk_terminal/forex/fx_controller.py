@@ -83,21 +83,22 @@ class ForexController:
                 "    reddit        search reddit for posts about the loaded instrument"
             )
             print(
-                "    eda >         exploratory data analysis,	 e.g.: decompose, cusum, residuals analysis"
+                "    > eda         exploratory data analysis,	 e.g.: decompose, cusum, residuals analysis"
             )
             print(
-                "    ba >          behavioural analysis,    	 from: reddit, stocktwits, twitter, google"
+                "    > ba          behavioural analysis,    	 from: reddit, stocktwits, twitter, google"
             )
         print("")
 
     def switch(self, an_input: str):
         """Process and dispatch input
+
         Returns
-        ______
+        -------
         True, False, or None
-        False - quit the menu
-        True - quit the program
-        None - continue in the menu
+            False - quit the menu
+            True - quit the program
+            None - continue in the menu
         """
         (known_args, other_args) = self.fx_parser.parse_known_args(an_input.split())
 
