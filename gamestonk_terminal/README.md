@@ -242,7 +242,6 @@ Command|Description|Source
 
 Command|Technique|Sources
 ------ | ------------|---
-`sma`         |simple moving average | [Wikipedia](https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average), [Investopedia](https://www.investopedia.com/terms/s/sma.asp)
 `knn`         |k-Nearest Neighbors | [Wikipedia](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm)
 `linear`      |linear regression (polynomial 1) | [Wikipedia](https://en.wikipedia.org/wiki/Linear_regression), [Investopedia](https://www.investopedia.com/terms/r/regression.asp)
 `quadratic`   |quadratic regression (polynomial 2) | [Wikipedia](https://en.wikipedia.org/wiki/Polynomial_regression), [Investopedia](https://www.investopedia.com/terms/r/regression.asp)
@@ -253,7 +252,7 @@ Command|Technique|Sources
 `mlp`         |MultiLayer Perceptron | [Wikipedia](https://en.wikipedia.org/wiki/Multilayer_perceptron)
 `rnn`         |Recurrent Neural Network  | [Wikipedia](https://en.wikipedia.org/wiki/Recurrent_neural_network)
 `lstm`        |Long Short-Term Memory  | [Wikipedia](https://en.wikipedia.org/wiki/Long_short-term_memory), [Details](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
-
+`conv1d`      |1D Convolution Neural Net| [Wikipedia](https://en.wikipedia.org/wiki/Convolutional_neural_network)
 &nbsp;
 
 ## Portfolio Analysis [»](portfolio/README.md)
@@ -455,8 +454,19 @@ Command|Website
 `last_congress`         |last congress trading
 `buy_congress`          |top buy congress tickers
 `sell_congress`         |top sell congress tickers
+`last_senate`           |last senate trading
+`buy_senate`            |top buy senate tickers
+`sell_senate`           |top sell senate tickers
+`last_house`            |last house trading
+`buy_house`             |top buy house tickers
+`sell_house`            |top sell house tickers
 with ticker provided    |
+`raw_congress`          | raw congress trades on the ticker
 `congress`              | congress trades on the ticker
+`raw_senate`            | raw senate trades on the ticker
+`senate`                | senate trades on the ticker
+`raw_house`             | raw house trades on the ticker
+`house`                 | house trades on the ticker
 
 &nbsp;
 

@@ -150,7 +150,7 @@ def load(l_args, s_ticker, s_start, s_interval, df_stock):
         "-s",
         "--start",
         type=valid_date,
-        default="2015-01-01",
+        default="2019-01-01",
         dest="s_start_date",
         help="The starting date (format YYYY-MM-DD) of the stock",
     )
@@ -455,7 +455,35 @@ def view(l_args, s_ticker, s_start, s_interval, df_stock):
         return
 
     # Update values:
-    s_ticker = ns_parser.s_ticker
+    if ns_parser.s_ticker != s_ticker:
+        if ns_parser.n_interval > 0:
+            s_ticker, s_start, s_interval, df_stock = load(
+                [
+                    "-t",
+                    ns_parser.s_ticker,
+                    "-s",
+                    ns_parser.s_start_date.strftime("%Y-%m-%d"),
+                    "-i",
+                    ns_parser.n_interval,
+                ],
+                s_ticker,
+                s_start,
+                s_interval,
+                df_stock,
+            )
+        else:
+            s_ticker, s_start, s_interval, df_stock = load(
+                [
+                    "-t",
+                    ns_parser.s_ticker,
+                    "-s",
+                    ns_parser.s_start_date.strftime("%Y-%m-%d"),
+                ],
+                s_ticker,
+                s_start,
+                s_interval,
+                df_stock,
+            )
 
     # A new interval intraday period was given
     if ns_parser.n_interval != 0:
