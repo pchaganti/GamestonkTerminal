@@ -24,6 +24,7 @@
 * [Backtesting](#Backtesting)
 * [Resource Collection](#Resource-Collection)
 * [Government](#Government)
+* [ETF](#ETF)
 
 ## Additional
 
@@ -101,9 +102,10 @@
 * [x] Add several exponential smoothing techniques (@didier) - [PR #132](https://github.com/DidierRLopes/GamestonkTerminal/pull/132)
 * [x] Allow backtesting (@didier) - [PR #169](https://github.com/DidierRLopes/GamestonkTerminal/pull/169)
 * [x] Add averaging around multiple predictions (@didier) - [PR #252](https://github.com/DidierRLopes/GamestonkTerminal/pull/252)
+* [x] CNN 1D (@jmaslek) - [PR #436](https://github.com/GamestonkTerminal/GamestonkTerminal/pull/436)
+
 
 **NEXT**
-* [ ] CNN 1D (@didier)
 * [ ] Combine Sentiment Analysis with Chart data - [IS #240](https://github.com/DidierRLopes/GamestonkTerminal/issues/240)
 * [ ] Cross-Validation methods (Forward Chaining, K-Fold, Group K-Fold) (@didier)
 
@@ -153,6 +155,7 @@
 * [x] Add robinhood (@jmaslek) - [PR #229](https://github.com/DidierRLopes/GamestonkTerminal/pull/229)
 * [x] Add Ally Invest (@jmaslek) - [PR #267](https://github.com/DidierRLopes/GamestonkTerminal/pull/267)
 * [x] Degiro support (@deel) - [PR #381](https://github.com/DidierRLopes/GamestonkTerminal/pull/381)
+* [x] Degiro improvement (@Chavithra) - [PR #445](https://github.com/DidierRLopes/GamestonkTerminal/pull/381)
 
 **NEXT**
 * [ ] Merge data from different brokers (@jmaslek)
@@ -202,13 +205,16 @@ ___
 
 ## Cryptocurrencies
 * [x] Add Coingecko (@jmaslek) - [PR #283](https://github.com/DidierRLopes/GamestonkTerminal/pull/283)
+* [x] Add top coins from CG (@jmaslek) [PR #428](#https://github.com/DidierRLopes/GamestonkTerminal/pull/428)
 * [x] view top coins from coinmarketcap (@jmaslek) - [PR #378](https://github.com/DidierRLopes/GamestonkTerminal/pull/378)
 * [x] Add binance (@jmaslek) [PR #428](#https://github.com/DidierRLopes/GamestonkTerminal/pull/428)
+* [x] Add crypto ta (@jmaslek) [PR #452](https://github.com/GamestonkTerminal/GamestonkTerminal/pull/452)
+
 
 **NEXT**
 * [ ] Add [Coinpaprika](https://coinpaprika.com/api/)
-* [ ] Add crypto charts
 * [ ] Add top altcoin lists
+
 ---
 
 ## Screener
@@ -218,6 +224,7 @@ ___
 * [x] Plot screener historical using Yahoo Finance data (@didier) - [PR #319](https://github.com/DidierRLopes/GamestonkTerminal/pull/319)
 * [x] Add command to take tickers to portfolio optimization (@didier) - [PR #349](https://github.com/DidierRLopes/GamestonkTerminal/pull/349)
 * [x] Add flags to save screeners and run papermill on returned tickers (@alokan) - [PR #414](https://github.com/DidierRLopes/GamestonkTerminal/pull/414)
+* [x] Add several new screener presets (@Traceabl3) - [PR #447](https://github.com/DidierRLopes/GamestonkTerminal/pull/447)
 
 **NEXT**
 
@@ -250,11 +257,18 @@ ___
 
 ## Government
 * [x] Add congress data (@didier) [PR #438](https://github.com/DidierRLopes/GamestonkTerminal/pull/438)
+* [x] Add senate and house data (@didier) [PR #446](https://github.com/DidierRLopes/GamestonkTerminal/pull/446)
+* [x] Add government contracts (@didier) [PR #453](https://github.com/DidierRLopes/GamestonkTerminal/pull/453)
 
 **NEXT**
 
 ---
+## ETF
+* [x] Add ETF data (@jmaslek) [PR #454](https://github.com/GamestonkTerminal/GamestonkTerminal/pull/454)
 
+**NEXT**
+
+---
 ## Backend
 
 **NEXT**

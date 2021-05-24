@@ -253,7 +253,7 @@ Alternatively, you can also set them to the following environment variables:
 | [Alpha Vantage](https://www.alphavantage.co) | GT_API_KEY_ALPHAVANTAGE |
 | [Binance](https://binance.com) | GT_API_BINANCE_KEY <br/> GT_API_BINANCE_SECRET |
 | [CoinMarketCap](https://coinmarketcap.com) | GT_CMC_API_KEY <br/> GT_CMC_API_KEY |
-| [DEGIRO](https://www.degiro.fr) | DG_USERNAME <br/> DG_PASSWORD <br/> DG_TOTP <br/> DG_TOTP_SECRET |
+| [DEGIRO](https://www.degiro.fr) | DG_USERNAME <br/> DG_PASSWORD <br/> DG_TOTP_SECRET |
 | [FRED](https://fred.stlouisfed.org) | GT_FRED_API_KEY |
 | [Financial Modeling Prep](https://financialmodelingprep.com) | GT_API_KEY_FINANCIALMODELINGPREP |
 | [Finhub](https://finnhub.io) | API_FINNHUB_KEY |
@@ -402,10 +402,10 @@ Feel free to share loss porn, memes or any questions at:
 [stars-url]: https://github.com/DidierRLopes/GamestonkTerminal/stargazers
 [issues-shield]: https://img.shields.io/github/issues/DidierRLopes/GamestonkTerminal.svg?style=for-the-badge&color=blue
 [issues-url]: https://github.com/DidierRLopes/GamestonkTerminal/issues
-[bugs-open-shield]: https://img.shields.io/github/issues/DidierRLopes/GamestonkTerminal/bug.svg?style=for-the-badge&color=yellow
-[bugs-open-url]: https://github.com/DidierRLopes/GamestonkTerminal/issues?q=is%3Aissue+label%3Abug+is%3Aopen
-[bugs-closed-shield]: https://img.shields.io/github/issues-closed/DidierRLopes/GamestonkTerminal/bug.svg?style=for-the-badge&color=success
-[bugs-closed-url]: https://github.com/DidierRLopes/GamestonkTerminal/issues?q=is%3Aissue+label%3Abug+is%3Aclosed
+[bugs-open-shield]: https://img.shields.io/github/issues/DidierRLopes/GamestonkTerminal/type%3Abug.svg?style=for-the-badge&color=yellow
+[bugs-open-url]: https://github.com/DidierRLopes/GamestonkTerminal/issues?q=is%3Aissue+label%3Atype%3Abug+is%3Aopen
+[bugs-closed-shield]: https://img.shields.io/github/issues-closed/DidierRLopes/GamestonkTerminal/type%3Abug.svg?style=for-the-badge&color=success
+[bugs-closed-url]: https://github.com/DidierRLopes/GamestonkTerminal/issues?q=is%3Aissue+label%3Atype%3Abug+is%3Aclosed
 [license-shield]: https://img.shields.io/github/license/DidierRLopes/GamestonkTerminal.svg?style=for-the-badge
 [license-url]: https://github.com/DidierRLopes/GamestonkTerminal/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
